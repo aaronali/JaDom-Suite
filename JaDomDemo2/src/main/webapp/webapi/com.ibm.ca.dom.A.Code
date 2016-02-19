@@ -1,0 +1,140 @@
+
+/**
+ * 
+ * @param href
+ * @param isExternal
+ */
+public A( String href, boolean isExternal);
+
+/**
+ * 
+ * @param anchorText
+ * @param href
+ * @param isExternal
+ */
+public A(String anchorText, String href, boolean isExternal);
+
+/**
+ * 
+ * @param anchorText
+ * @param href
+ * @param isExternal
+ * @param attributes
+ */
+public A(String anchorText, String href, boolean isExternal, HashMap&ltString, String&gt attributes);
+
+/**
+ * 
+ * @param anchorText
+ * @param href
+ * @param isExternal
+ * @param id
+ * @param domClass
+ * @param Styles
+ * @param jsCallout
+ */
+public A(String anchorText, String href,boolean isExternal, String id, String domClass, String Styles, String jsCallout); 
+
+/**
+ * 
+ * @param href
+ */
+public  final void sethref(String href);
+
+/**
+ * 
+ * @return newTab
+ */
+public  final boolean isNewTab();
+
+/**
+ * 
+ * @param newTab
+ */
+public  final void setNewTab(boolean newTab); 
+  
+/**
+ * 
+ * @return href
+ */
+public final String getHref();
+
+/**
+ * Sets the current link href
+ * @param href
+ */
+public final void setHref(String href);
+
+/**
+ * Returns true if this is an external link
+ * @return isExternal
+ */
+public final boolean isExternal() ;
+
+/**
+ * Sets this as an external link not to use the link manager servlet
+ * @param isExternal
+ */
+public final void setExternal(boolean isExternal);
+
+/**
+ * Gets the current links target parameter
+ * @return String
+ */
+public final String getTarget();
+
+/**
+ * Sets the current links target parameter
+ * @param target
+ */
+public final void setTarget(String target);
+
+/**
+ * Gets the relationship type for the link
+ * @see RelType
+ * @return RelType
+ */
+public final RelType getRel();
+
+/**
+ * Sets the relationship type for the link
+ * @param rel as RelType
+ */
+public final void setRel(RelType rel);
+
+/**
+ * Gets the current links hrefLang parameter
+ * @return String
+ */
+public final String getHreflang() ;
+
+/**
+ * Sets the current links hreflang parameter
+ * @param hreflang as String
+ */
+public final void setHreflang(String hreflang);
+
+/**
+ * Gets the current links download parameter
+ * @return String
+ */
+public final String getDownload();
+
+/**
+ * Sets the current links download parameter
+ * @param download as String
+ */
+public final void setDownload(String download);
+ 
+/**
+ * Gets the current links type parameter
+ * @return String
+ */
+public final String getType();
+
+/**
+ * Sets the current links type parameter
+ * @param type as String
+ */
+public final void setType(String type);
+ 

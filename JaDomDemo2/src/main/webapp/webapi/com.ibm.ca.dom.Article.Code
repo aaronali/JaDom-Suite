@@ -1,0 +1,36 @@
+
+	/**
+	 * 
+	 */
+	public Article();
+	
+	/**
+	 * 
+	 * @param article Article
+	 */
+	public Article(Article article);
+	
+	/**
+	 * 
+	 * @param htmlCode String
+	 */
+ 	public Article(String htmlCode);
+ 	
+ 	/**
+ 	 * 
+ 	 * @param htmlCode String
+ 	 * @param attributes HashMap&ltString,String&gt or null
+ 	 */
+	public Article( String htmlCode, HashMap<String, String> attributes);
+	
+	/**
+	 * 
+	 * @param htmlCode String
+	 * @param id String or Null or ApplicationManager.FORCE_NO_ATTRIBUTE
+	 * @param domClass String or Null or ApplicationManager.FORCE_NO_ATTRIBUTE
+	 * @param Styles String or Null or ApplicationManager.FORCE_NO_ATTRIBUTE
+	 * @param jsCallout String or Null or ApplicationManager.FORCE_NO_ATTRIBUTE
+	 */
+	public Article( String htmlCode, String id, String domClass, String Styles, String jsCallout) {
+		super(tag(Article.class), htmlCode, (id!=null)?id:ApplicationManager.getNextId(), domClass, Styles, jsCallout); 
+  

@@ -1,0 +1,1 @@
+The JaDom stack is designed to help maintain security throughout your web application. The stach has encryption methods built in so the Dom document can be passed easily between environemnts using session variables.  The JaDom stack aslo allows for all text to be read via file from the servers file system so access can be tightly controlled.

@@ -1,0 +1,25 @@
+The JaDom Document is the core of the JaDom Applicaiton. The document is the base element to which all other dom elements are added. While the document is designed specifically for html, by setting the ApplicationManager.FORCE_HTML_COMPLIANCE to false you can manipulate the document to act in another way. At the moment the only supported doucement type is 'html'.
+
+To create the Document need to call the constructor to instantiate it. 
+<pre><code> Document d = new Document("html");</code></pre>
+
+When using the full stack with the servlets, the default document object is assigned inside the ApppicaionServlet. Other servlets should use the same default docuemnt and add there own customizations. This insures you default template document is the same between all you pages, giving a common look and feel to your applicaiton.
+
+When designing html pages, remeber the document can only contain oejn head and one body class. All other elements must be nested inside these to eleemtns to maintain html compliance standards. If you use the full stack witht he servlets, you can simply call the pre codded methods to add top the body and head.
+To set the current pages title use the following method
+<pre><code>/** Inside any servelt which extends ApplicationServlet we can call the setTitle method **/ 
+	protected void setTitle(titleString);
+
+/** From outside the servlet we call the documents first element
+          which should be a head and then call the addTitle method. This method will  **/
+	((Head)document.getEmbeddedElements()[0]).addTitle(title);</code></pre>
+To add elments to the Body or the head of the document use the following methods
+<pre><code>/** From inside a servelt extending ApplicationServlet **/ 
+	protected void bodyAdd(DOMelement);
+	protected void headAdd(DOMelement);
+/** From outside the servlet you can use the addDomElement method **/ 
+	//add to head 
+	document.getEmbeddedElements()[0].addDomElement(element); 
+	//add to body 
+	document.getEmbeddedElements()[1].addDomElement(element);</code> </pre>
+ The code above assumes you are using html compliance and have a head and a body DomElement present.

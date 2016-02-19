@@ -1,0 +1,37 @@
+
+	/**
+	 * Creates an html &ltb&gt&lt/b&gt tag
+	 */
+	public B();
+	
+	/**
+	 * Creates an html &ltb&gt&lt/b&gt tag with the same properties of the given element
+	 * @param b B
+	 */
+	public B(B b);
+	
+	/**
+	 *  Creates an html &ltb&gt&lt/b&gt tag with the given text<br><br>
+	 *  &ltb&gtboldText&lt/b&gt
+	 * @param boldText String
+	 */
+	public B( String boldText);
+	 
+	/**
+	 *  Creates an html &ltb&gt&lt/b&gt tag with the given text and the assigned attributes<br><br>
+	 *  &ltb&gtboldText&lt/b&gt
+	 * @param boldText
+	 * @param attributes
+	 */
+	public B(String boldText, HashMap<String, String> attributes);
+	
+	/**
+	 *  Creates an html &ltb&gt&lt/b&gt tag with the given text and assigned attributes<br><br>
+	 *  &ltb id=id class=domClass styles=styles jsCallout&gtboldText&lt/b&gt
+	 * @param boldText
+	 * @param id String or Null or ApplicationManager.FORCE_NO_ATTRIBUTE
+	 * @param domClass String or Null or ApplicationManager.FORCE_NO_ATTRIBUTE
+	 * @param Styles String or Null or ApplicationManager.FORCE_NO_ATTRIBUTE
+	 * @param jsCallout String or Null or ApplicationManager.FORCE_NO_ATTRIBUTE
+	 */
+	public B(String boldText, String id, String domClass, String Styles, String jsCallout);

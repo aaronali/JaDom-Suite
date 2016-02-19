@@ -1,0 +1,6 @@
+JaDom is an intesive framework that allows the full manipulation of the dom through pure JAVA code. 
+JaDom includes a complete library of html element classes designed in Java that can be easily deplayed
+ in the browser.<br>JaDom allows you to 
+create web applications with out even having to code a line of css or html. 
+The powerful suite of tools leverages the ability to manipulate dom and get the effects you desire.
+Web applications can be quickly deployed using bootstap, jquery, or angular."

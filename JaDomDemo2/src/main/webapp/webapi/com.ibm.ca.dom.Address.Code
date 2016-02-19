@@ -1,0 +1,29 @@
+ 
+/**
+ * 
+ */
+public Address();
+
+/**
+ * 
+ * @param addressHtml as String
+ */
+public Address( String addressHtml);
+
+/**
+ * 
+ * @param addressHtml as String
+ * @param attributes as HashMap&ltString,String&gt
+ */
+public Address(String addressHtml, HashMap<String, String> attributes);
+ 
+/**
+ * 
+ * @param addressHtml String
+ * @param id String or null
+ * @param domClass String or null or ApplicationManager.FORCE_NO_ATTRIBUTE
+ * @param Styles or null or ApplicationManager.FORCE_NO_ATTRIBUTE
+ * @param jsCallout or null or ApplicationManager.FORCE_NO_ATTRIBUTE
+ */
+public Address(String addressHtml, String id, String domClass, String Styles, String jsCallout);
+ 

@@ -1,0 +1,4 @@
+
+The A tag is used to create links and anchors in your code. When an A tag is set to external it will not use the provided link managing servlet but will redirect instead directly to the source.
+
+ 

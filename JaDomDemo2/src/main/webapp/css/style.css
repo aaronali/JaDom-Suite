@@ -1,0 +1,319 @@
+/* style.css
+ * This file provides css styles.
+ */
+
+body,html {
+	background-color: #3b4b54;
+	 width : auto	;
+	height: 100%;
+	margin: 0 auto;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	color: #ffffff;
+	margin-left:2%;
+	margin-right:2%;
+}
+
+.left{
+	float:left;
+}
+
+.right{
+	float:right;
+}
+
+.fullwidth{
+	width:100%;
+}
+.fullwidth-responsive{
+	width:100%;
+	height:auto;
+}
+
+.halfwidth{
+	width:50%;
+}
+.quarterwidth{
+	width:25%;
+}
+.threequaterswidth{
+	width:75%;
+}
+
+.fullhieght{
+	height:100%;
+}
+
+
+.h1{
+	color:magenta;
+}
+
+.center{
+	position:relative;
+	margin:auto;
+	text-align:center;
+}
+
+a {
+	text-decoration: none;
+	color: #00aed1;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.newappIcon {
+	padding-top: 10%;
+	display: block;
+	margin: 0 auto;
+	padding-bottom: 2em;
+	max-width:200px;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.leftHalf {
+	float: left;
+	background-color: #26343f;
+	width: 45%;
+	height: 100%;
+}
+
+.rightHalf {
+	float: right;
+	width: 55%;
+	background-color: #313f4a;
+	height: 100%;
+	overflow:auto;
+}
+
+.description {
+	padding-left: 50px;
+	padding-right: 50px;
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.blue {
+	color: #00aed1;
+}
+
+table {
+	table-layout: fixed;
+	width: 800px;
+	margin: 0 auto;
+	word-wrap: break-word;
+	padding-top:10%;
+}
+
+th {
+	border-bottom: 1px solid #000;
+}
+
+th, td {
+	text-align: left;
+	padding: 2px 20px;
+}
+
+.env-var {
+	text-align: right;
+	border-right: 1px solid #000;
+	width: 30%;
+}
+
+pre {
+	padding: 1%;
+	margin: 1%; 
+	color:black;
+	background-color:white;
+}
+
+
+.blue{
+	color:blue;
+}
+
+.black{
+	color:black;
+}
+
+.white{
+	color:blue;
+}
+
+.lightblue{
+	color:lightblue;
+}
+
+.center{
+	position:relative;
+	margin:auto;
+}
+
+
+.flex{
+	display:flex;
+}
+
+.navMenu{
+	list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+	border: 1px solid #AAA;
+	 
+}
+
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+} 
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+} 
+hr.style-three {
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+} 
+hr.style-four {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+} 
+hr.style-five {
+    border: 0;
+    height: 0; /* Firefox... */
+    box-shadow: 0 0 10px 1px black;
+}
+hr.style-five:after {  /* Not really supposed to work, but does */
+    content: "\00a0";  /* Prevent margin collapse */
+} 
+hr.style-six {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+} 
+hr.style-seven {
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+hr.style-seven:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+} 
+hr.style-eight {
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+hr.style-eight:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+} 
+.appColumn{
+	display:inline-block;
+}
+.appColumnInternal{ 
+	min-width:100px;
+	white-space: normal;
+	float:left;
+	 
+}
+ @media screen and (max-width: 1326px) {
+    body { 
+    }
+    
+    .appColumnInternal1{
+    	min-height:550px; 
+    	min-width:125px!important; 
+    	max-width:50% !important;
+    	
+    }
+}
+
+ @media screen and (max-width: 1264px) {
+    body { 
+    }
+    
+    .appColumnInternal1{
+    	min-height:650px; 
+    	min-width:125px!important; 
+    	max-width:50% !important;
+    	
+    }
+}
+ 
+ 
+ @media screen and (max-width: 1079px) {
+    body { 
+    }
+    
+    .appColumnInternal1{
+    	min-height:730px; 
+    	min-width:125px!important; 
+    	max-width:50% !important;
+    	
+    }
+}
+ 
+@media screen and (max-width: 492px) {
+    body { 
+    }
+    
+    .appColumnInternal{
+    	
+    	min-width:125px!important; 
+    	max-width:50% !important;
+    	
+    }
+}
+
+
+@media screen and (max-width: 310px) {
+    body { 
+    }
+    
+    .appColumnInternal{
+    	min-width:125px !important;
+    	
+    	max-width:100% !important;
+    	height:auto;
+    	white-space: normal;
+    	word-wrap:break-all;
+    	 
+    }
+}
+
+@media screen and (max-width: 310px) {
+    body { 
+    }
+    
+    .appColumnInternal{
+    	min-width:50% !important;
+    	max-width:100% !important;
+    	 
+    }
+}

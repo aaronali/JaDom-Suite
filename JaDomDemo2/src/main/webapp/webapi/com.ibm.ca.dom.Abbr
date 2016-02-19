@@ -1,0 +1,1 @@
+The abbr tag is used to help define an abbreviation in code.  The title element is the full text string and the abbreviation is the shortened version.  Some browsers will not style this element different then the parent element.

@@ -1,0 +1,27 @@
+ 
+ /**
+  * 
+  * @param title
+  * @param abbreviation
+  * @param attributes
+  */
+public Abbr(String title, String abbreviation, HashMap<String, String> attributes);
+
+/**
+ * 
+ * @param title
+ * @param abbreviation
+ */
+public Abbr(String title, String abbreviation);
+
+/**
+ * 
+ * @param title
+ * @param abbreviation
+ * @param id
+ * @param domClass
+ * @param Styles
+ * @param jsCallout
+ */
+public Abbr(String title, String abbreviation, String id, String domClass, String Styles, String jsCallout);
+  

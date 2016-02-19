@@ -1,0 +1,123 @@
+ 
+	protected String  alt;
+	protected Coord  coords;
+	protected Shape shape;
+	protected String href;
+	protected String download;
+	protected String rel;
+	  
+	/**
+	 * 
+	 * @param alternateText
+	 * @param coords
+	 * @param shape
+	 * @param href
+	 * @param download
+	 * @param rel
+	 * @param id
+	 * @param domClass
+	 * @param Styles
+	 * @param jsCallout
+	 */
+	public Area(String alternateText, Coord  coords, Shape shape, String href, 	String download, 
+					`String rel,  String id, String domClass, String Styles, String jsCallout);
+
+	/**
+	 * 
+	 * @param coords
+	 * @param attributes
+	 */
+	public Area(Coord coords, HashMap<String, String> attributes);
+	
+	/**
+	 * 
+	 */
+	public Area();
+	/**
+	 * 
+	 * @param coords
+	 * @param alternateText
+	 * @param id
+	 * @param domClass
+	 * @param Styles
+	 * @param jsCallout
+	 */
+	public Area(Coord  coords, String alternateText, String id, String domClass, String Styles, String jsCallout);
+	
+		
+	/**
+	 * Gets the areas alternate text
+	 * @return String
+	 */
+	public String getAlt();
+
+	/**
+	 * Sets the areas alternate text
+	 * @param alt String
+	 */
+	public void setAlt(String alt);
+	
+	/**
+	 * Gets the areas coordinates
+	 * @return Coord
+	 * @see com.ibm.ca.dom.Coord
+	 */
+	public Coord getCoords();
+
+	/**
+	 * Sets the areas coordinates
+	 * @param coords Coord
+	 * @see com.ibm.ca.dom.Coord
+	 */
+	public void setCoords(Coord coords);
+
+	/**
+	 * Gets the current shape of the area
+	 * @return Shape
+	 * @see com.ibm.ca.dom.Shape
+	 */
+	public Shape getShape();
+
+	/**
+	 * Sets the current shape of the area
+	 * @param shape Shape
+	 * @see com.ibm.ca.dom.Shape
+	 */
+	public void setShape(Shape shape);
+
+	/**
+	 * Gets the current Areas href value
+	 * @return
+	 */
+	public String getHref();
+
+	/**
+	 * Sets the current areas hrefValue
+	 * @return
+	 */
+	public void setHref(String href);
+
+	/**
+	 * Gets the current areas download value
+	 * @return
+	 */
+	public String getDownload();
+
+	/**
+	 * Sets the current areas download value
+	 * @param download
+	 */
+	public void setDownload(String download);
+
+	/**
+	 * Gets the current Areas rel value
+	 * @return
+	 */
+	public String getRel();
+
+	/**
+	 * Sets the current areas rel value
+	 * @param rel
+	 */
+	public void setRel(String rel);
+	 

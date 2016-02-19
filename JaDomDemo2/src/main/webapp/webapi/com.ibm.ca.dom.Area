@@ -1,0 +1,10 @@
+The area element can be used to help represent  either hyperlink and a corresponding area on an image map, or a dead area on an image map
+<b>alt</b> - alternate text when images cannot be displayed
+<b>coords</b> - coordinates of the shape created on a image map
+<b>shape</b> - they type of shaape to be created
+<b>href</b> - url address got the hyperlink
+<b>target</b> - browsing context for the hyperlink navigation
+<b>download</b> - whether to download the resource from the hyperlink instead of navigating to it, includes its file name if so
+<b>rel</b> - relationship type between the document and the hyperlink resource
+<b>reflang</b> - language of the hyperlink resource
+<b>type</b> - the type of the referenced resource

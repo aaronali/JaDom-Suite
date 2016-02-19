@@ -1,0 +1,1 @@
+The application manager is a static class used to help control the JaDom set. There are several flags that can be set that will have global effects on the applications you develop, This includes the HTML5 compliancy flag to help force HTML5 compliant web pages.

@@ -1,0 +1,50 @@
+
+	/* header constants defaults*/
+	public static final String DEFAULT_HEADER_CLASS = null;
+	public static final String DEFAULT_HEADER_JS = null;
+	
+	/* paragraph constants defaults*/ 
+
+	public static final boolean AREA_ANCHOR_USE_LINK_MANAGER= false;
+	
+	public static final boolean INLINE_SYTLES = false;
+	/** Specifies the default language for the document object **/
+	public static final String DEFAULT_HTML_LANG = "en";
+	/** Species an attribute not to be proccessed **/
+	public static final String FORCE_NO_ATTRIBUTE = "FORCE_NO_ATTRIBUTE";
+	public static final boolean FORCE_HTML_COMPLIANCE = true; 
+	
+	/** Gets the next auto generated id **/
+	private static ArrayList<String> autoIds = new ArrayList<String>();
+	
+ 
+	 
+ 
+
+  
+
+
+ 
+	  
+	
+	public static String getNextId(){ 
+		String uuid =null;
+		boolean testing = true;
+		while(testing){	
+			uuid = UUID.randomUUID().toString();  
+			testing = Character.isDigit(uuid.charAt(0));
+			if(!testing)
+				uuid =uuid.substring(0,6);
+			if(autoIds.contains(uuid)) testing = true;
+			if(!testing){
+				autoIds.add(uuid);
+			}
+		}
+		return uuid;
+	}
+
+	
+}
+
+
+

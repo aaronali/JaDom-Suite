@@ -1,0 +1,16 @@
+
+Document document = new Document("html");
+
+public Document();
+	
+public Document(String doctype); 
+	 
+public Document(String doctype, HashMap<String, String> attributes);
+
+public Document(Document document);
+
+public void linkStyleSheet(String src);
+ 
+public void addHeaderStyle(String src);
+	
+public void linkJavaScript(String src); 

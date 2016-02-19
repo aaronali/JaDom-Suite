@@ -1,0 +1,6 @@
+Document
+
+The document object is used to house the data from the web page. You can add different elements to the body to build hte web page. When you are using document of type "html" you should only add to the body head and a body. You can add other elements into the head add body but in order to maintain HTML5 compliant code, all elements should be nested within these to dom elements.
+
+Currently the only supported docType for the Document class is a "html".
+

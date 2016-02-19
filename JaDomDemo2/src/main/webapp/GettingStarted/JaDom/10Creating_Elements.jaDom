@@ -1,0 +1,22 @@
+All the common elements in the JaDom library extend a base DomElement. Almost all the elememts can be instantiated with similiar syntax. All elements also have JavaDoc attached so the more complex element constructors can be seen and their arguments indentified.
+Virtually all elements and be instantiated with an empty constructor. There only a small few exceptions to this.
+
+
+To create the page different sections you simple can instantiate it with commands as listed beleow.
+<pre><code>/** the following code can be used to basic elements **/ 
+Div div = new Div();
+P p = new P();
+Aside aside= new Aside();
+Span span = new Span();
+Nav nav = new Nav();
+Section section = new Section()</code></pre>
+
+You can optionaly include any html text as the first or only argument in most of element constructors as well.
+<pre><code>Div div = new Div("html string");
+P p = new P("&ltp&gthtml String&lt/p&gt");
+Aside aside= new Aside("&ltb&gthtml String&lt/b&gt");
+Span span = new Span("Straight up text");
+Nav nav = new Nav("html");
+Section section = new Section("&ltb&gthtml String&lt/b&gt") </code></pre>
+
+When using the full stack with the servlets, the default document object is assigned inside the ApppicaionServlet. Other servlets extending this can use the same default document and add there own customizations. This insures you default template document is the same between all you pages, giveing a common look and feel to your applicaiton.
