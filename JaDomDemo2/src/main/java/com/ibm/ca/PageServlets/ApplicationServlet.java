@@ -14,11 +14,13 @@ import javax.servlet.http.HttpSession;
 
 import com.ibm.ca.MainServlet.AppManager;
 import com.ibm.ca.MainServlet.ObjectHelper;
-import com.ibm.ca.Security.Secure; 
-import com.ibm.ca.dom.DOMelement;
-import com.ibm.ca.dom.Div;
-import com.ibm.ca.dom.Document; 
-import com.ibm.ca.dom.Head;
+import com.ibm.ca.Security.Secure;
+import com.ibm.ca.jadom.ApplicationManager;
+import com.ibm.ca.jadom.DOMelement;
+import com.ibm.ca.jadom.Div;
+import com.ibm.ca.jadom.Document; 
+import com.ibm.ca.jadom.Head;
+import com.ibm.ca.jadom.Window;
 import com.ibm.ca.logger.Logger; 
 
 /**
@@ -28,14 +30,14 @@ import com.ibm.ca.logger.Logger;
 public abstract class ApplicationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
       
-	protected com.ibm.ca.dom.Document document = new com.ibm.ca.dom.Document("html");
+	protected com.ibm.ca.jadom.Document document = new com.ibm.ca.jadom.Document("html");
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ApplicationServlet() {
-        super(); 
-    }
-    
+	 public ApplicationServlet() {
+		super();  
+	}
+	    
 
     private HttpSession session;
 	/**
@@ -45,9 +47,14 @@ public abstract class ApplicationServlet extends HttpServlet {
 		this.session =request.getSession();
 		Logger.info("ApplicationServlet for "+session.getId());
 		try {
-			Logger.info("Decrypting Docuemnt");
+			Logger.info("Decrypting Docuemnt" + getClass().getCanonicalName());
 			Secure secure=new Secure(AppManager.getAttribute("docKey"+this.session.getId()));
-			this.document =   (Document)(ObjectHelper.stringToObject(secure.decrypt((String)session.getAttribute("defaultDocument")), com.ibm.ca.dom.Document.class));
+			this.document =   (Document)(ObjectHelper.stringToObject(secure.decrypt((String)session.getAttribute("defaultDocument")), com.ibm.ca.jadom.Document.class));
+			Window s = ((Window) ApplicationManager.getGlobal(Id().concat("WINDOW_OBJECT")));
+			if(s!=null){
+				document.setWindow(s,Id().concat("WINDOW_OBJECT"));
+				System.out.println("Window Set");
+			}
 			secure = null;
 			Logger.info("Doucment decrypted");
 
@@ -99,27 +106,32 @@ public abstract class ApplicationServlet extends HttpServlet {
 	 * @param response
 	 */
 	protected void execute(HttpServletResponse response){
-		
-		try {
-			//Write the document document the session.
-			// This is mainly for implementation and manipulatoin of jsps and can be excluded when serving info solely 
-			// from the page servelets
-			Secure secure = new Secure(); 
-			secure.SetKey(AppManager.getAttribute("docKey"+session.getId()));
-			this.session.setAttribute("document",secure.encrypt(ObjectHelper.objectToString(this.document)));
-			secure =null;
-		} catch (Exception e1) {
-			PrintWriter writer;
-			try {
-				writer = response.getWriter();
-			    writer.write(this.document.toString());	   
-			    writer.close();
-				e1.printStackTrace();
-				return;
-			} catch (IOException e) { 
-				e.printStackTrace();
-			}
-		}
+		 
+//		try {
+//			//Write the document document the session.
+//			// This is mainly for implementation and manipulatoin of jsps and can be excluded when serving info solely 
+//			// from the page servelets
+//			Secure secure = new Secure(); 
+//			secure.SetKey(AppManager.getAttribute("docKey"+session.getId()));
+//			this.session.setAttribute("document",secure.encrypt(ObjectHelper.objectToString(this.document)));
+//			secure =null;
+//		} catch (Exception e1) {
+//			PrintWriter writer;
+//			try {
+//				Document doc= new Document();
+//				doc= this.document; 
+//				doc.setWindow((Window)ApplicationManager.getGlobal(Id().concat(Id().concat("WINDOW_OBJECT"))));
+//				ApplicationManager.GLOBALS.remove(Id().concat(Id()).concat("WINDOW_OBJECT"));
+//				writer = response.getWriter();
+//			    writer.write(doc.toString());	   
+//			    writer.close();
+//				e1.printStackTrace();
+//				return;
+//			} catch (IOException e) { 
+//				e.printStackTrace();
+//			}
+//		}
+		 
 		PrintWriter writer; 
 		// Below we are grabbing the encrypted session document and writing it as html
 		// we could optionally grab the servlets document object and display it with out the need for encryption
@@ -127,10 +139,16 @@ public abstract class ApplicationServlet extends HttpServlet {
 			
 			writer = response.getWriter();
 			Secure secure =  new Secure(AppManager.getAttribute("docKey"+this.session.getId()));
-			writer.write(((Document)(ObjectHelper.stringToObject(secure.decrypt((String)session.getAttribute("document")), com.ibm.ca.dom.Document.class))).toString());
+			Document  doc = this.document;//(((Document)(ObjectHelper.stringToObject(secure.decrypt((String)session.getAttribute("document")), com.ibm.ca.jadom.Document.class))));
+			Window win = (Window)ApplicationManager.getGlobal(Id().concat(Id().concat("WINDOW_OBJECT")));
+			System.out.println(win);
+			if(win!=null)
+				doc.setWindow(win,Id().concat("WINDOW_OBJECT"));
+			//ApplicationManager.GLOBALS.remove(Id().concat(Id()).concat("WINDOW_OBJECT"));
+			writer = response.getWriter();
+		    writer.write(doc.toString());	 
 			secure =null;
-			writer.close();
-			writer=null;
+			writer.close(); 
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -152,4 +170,8 @@ public abstract class ApplicationServlet extends HttpServlet {
 	public String Id(){
 		return this.session.getId();
 	} 
+	
+	public void setDocument(Document document){
+		this.document =document;
+	}
 }

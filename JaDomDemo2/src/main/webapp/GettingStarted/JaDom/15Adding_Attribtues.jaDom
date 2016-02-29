@@ -2,11 +2,11 @@ JaDom helps allows you to customize all the dom elements by adding attributes to
 You can easily add attributes using the elements getters and setters. You can optionally add attributes by using the element.addAttribute command. You can also use this command to add standard attributes like element specific styles, id's, classes, or even JavaScript call backs.
 There are a few pre-coded key words you should use when assigning some attributes.
 To add a styler attribute, use the key work "style".
-To add a style class attribute, use the keyword "domClass".
+To add a style class attribute, use the keyword ApplicationManager.STRING_DOMCLASS.
 <pre><code>/** this is an example of adding style and class attributes to a div section for more customization **/
 Div div = new Div();
 div.addAttribute("style", "width:100%");
-div.addAttribute("domClass", "center");</code></pre>
+div.addAttribute(ApplicationManager.STRING_DOMCLASS, "center");</code></pre>
 For element specific attributes you can use the getters and setters. In the example below you can see how we set the new BlockQuotes cite attribute simply through the setter.
 <pre><code>BlockQuote bq =new BlockQuote();
 bq.setCite("author cite info");</code></pre>

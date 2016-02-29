@@ -10,13 +10,14 @@ import javax.servlet.http.HttpSessionEvent;
 import com.ibm.ca.CodeBuilders.NavBuilder;
 import com.ibm.ca.MainServlet.AppManager; 
 import com.ibm.ca.MainServlet.ObjectHelper;
-import com.ibm.ca.Security.Secure; 
-import com.ibm.ca.dom.Body;
-import com.ibm.ca.dom.Div;
-import com.ibm.ca.dom.Document;
-import com.ibm.ca.dom.H;
-import com.ibm.ca.dom.Head;
-import com.ibm.ca.dom.Header; 
+import com.ibm.ca.Security.Secure;
+import com.ibm.ca.jadom.ApplicationManager;
+import com.ibm.ca.jadom.Body;
+import com.ibm.ca.jadom.Div;
+import com.ibm.ca.jadom.Document;
+import com.ibm.ca.jadom.H;
+import com.ibm.ca.jadom.Head;
+import com.ibm.ca.jadom.Header; 
 /**
  * Application Lifecycle Listener implementation class HttpSessionListener
  */
@@ -30,6 +31,7 @@ public class HttpSessionListener implements javax.servlet.http.HttpSessionListen
 	private Document defaultDoc;  
 	
     public HttpSessionListener() { 
+    	ApplicationManager.setScriptPath("/Users/aaronali/git/JaDom-Example/JaDomDemo2/src/scripts");
     	Logger.initializeLogging(); 
     	Body body = new Body( );
     	Div div= new Div();
@@ -55,6 +57,7 @@ public class HttpSessionListener implements javax.servlet.http.HttpSessionListen
 			nav.addNavLink("test.html", "Testing Page", null);
 			body.addDomElement(nav.getAsSpan());
 		Logger.info("Session Listener initilized");
+		
     }
 
 	/**
@@ -80,11 +83,10 @@ public class HttpSessionListener implements javax.servlet.http.HttpSessionListen
 			  Secure secure;
 			try {
 				secure = new Secure();
-			
-			  String docString = ObjectHelper.objectToString(defaultDoc); 
-			  arg0.getSession().setAttribute("defaultDocument", secure.encrypt(docString)); 
-			  arg0.getSession().setAttribute("document", secure.encrypt(docString)); 
-			  AppManager.addAttribute("docKey"+arg0.getSession().getId(), secure.getKey());
+				String docString = ObjectHelper.objectToString(defaultDoc); 
+			   arg0.getSession().setAttribute("defaultDocument", secure.encrypt(docString)); 
+			   arg0.getSession().setAttribute("document", secure.encrypt(docString)); 
+			   AppManager.addAttribute("docKey"+arg0.getSession().getId(), secure.getKey());
 			  secure = null;
 			  docString = null;
 		 
@@ -113,7 +115,7 @@ public class HttpSessionListener implements javax.servlet.http.HttpSessionListen
 			e.printStackTrace();
 		}
 		arg0.getSession().setAttribute("stlyeSheet", "");
-		Logger.info("Init session "+arg0.getSession() + " Done : defaultDoc = " +this.defaultDoc.toString());
+		Logger.info("Init session "+arg0.getSession().getId() + " Done");
     }
 
 	/**

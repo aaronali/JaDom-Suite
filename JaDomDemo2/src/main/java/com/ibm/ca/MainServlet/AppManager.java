@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
 
-import com.ibm.ca.dom.Document;
+import com.ibm.ca.jadom.Document;
 
 public class AppManager {
 

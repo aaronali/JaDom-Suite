@@ -1,6 +1,6 @@
 package com.ibm.ca.CodeBuilders;
  
-import com.ibm.ca.dom.DOMelement; 
+import com.ibm.ca.jadom.DOMelement; 
 import com.ibm.ca.logger.Logger;
 
 public class Html {

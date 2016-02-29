@@ -8,17 +8,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.ibm.ca.JavaScript.EventType;
-import com.ibm.ca.JavaScript.XMLHttpRequest;
-import com.ibm.ca.FileReader.FileReader;
-import com.ibm.ca.JavaScript.DomFunction;
-import com.ibm.ca.JavaScript.EventListener;
-import com.ibm.ca.dom.*;
-import com.ibm.ca.logger.Logger;
-import com.ibm.ca.test.User;
-
-import jdk.nashorn.internal.runtime.Context; 
+ 
+import com.ibm.ca.jadom.Div;
+import com.ibm.ca.jadom.H;
+import com.ibm.ca.jadom.Header;
+import com.ibm.ca.jadom.Img;
+import com.ibm.ca.jadom.P;
+import com.ibm.ca.jadom.*; 
+import com.ibm.ca.JavaScript.DomFunction; 
+ 
 /**
  * Servlet implementation class Index
  */
@@ -45,7 +43,7 @@ public class Index extends ApplicationServlet {
 		URI contextUrl = URI.create(request.getRequestURL().toString()).resolve(request.getContextPath()); 
 			Img img = new Img("images/JaDom.png","walking dead",false);
 			Img g = new Img("images/JaDom.png", "JaDom",false);
-			g.addAttribute("domClass", "center"); 
+			g.addAttribute(ApplicationManager.STRING_DOMCLASS, "center"); 
 			Header header = new Header(); 
 			header.addDomElement(new H(2,"JaDOM",null,"center", null)); 
 			header.addDomElement(new H(4,"Pre beta release")); 
@@ -53,23 +51,23 @@ public class Index extends ApplicationServlet {
 
 			P p = new P();
 			p.innnHtmlFromFile(gh);
-			p.addAttribute("domClass", "centre");
+			p.addAttribute(ApplicationManager.STRING_DOMCLASS, "centre");
 			Div div = new Div();
 			div.addAttribute("style", "width:100%");
-			div.addAttribute("domClass", "center");
-			DomFunction f1 =  new DomFunction(null,div.getElementById().concat(".innerHTML=event.target;"),null);
+			div.addAttribute(ApplicationManager.STRING_DOMCLASS, "center");
+			
 
-	 		DomFunction f2 =  new DomFunction(null,"alert(\"this is a \" + eventListenerNamePlaceHolder.responseText);",null);
-	 		java.lang.Object[] param=  {"tets"};
-		  	 g.ondrag(f1,"test",param, Id()); 
-	 	  div.onclick(f2,"test",param, Id());
 		 	div.addDomElement(g);
 			//this.document.getEmbeddedElements()[1].onload(f1,"test",param, Id());
 			this.bodyAdd(div);
 			this.bodyAdd(header);
 			this.bodyAdd(p); 
 		 
-	 
+	 DomFunction f1 =  new DomFunction(null,div.getDocument().getElementById(div).concat(".innerHTML=event.target;"),null);
+	 		DomFunction f2 =  new DomFunction(null,"alert(\"this is a \" + eventListenerNamePlaceHolder.responseText);",null);
+	 		java.lang.Object[] param=  {"tets"};
+		  	 g.ondrag(f1,"test",param, Id()); 
+	 	  div.onclick(f2,"test",param, Id());
 			
 		 
 		
@@ -82,7 +80,7 @@ public class Index extends ApplicationServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
-		doGet(request, response);
+		//doGet(request, response);
 	}
 
 }

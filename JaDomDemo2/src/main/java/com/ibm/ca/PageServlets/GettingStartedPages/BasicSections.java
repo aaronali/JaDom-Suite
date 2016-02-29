@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.ibm.ca.FileReader.FileReader;
 import com.ibm.ca.PageServlets.ApplicationServlet;
 import com.ibm.ca.customNavigation.SidePageNav;
-import com.ibm.ca.dom.Aside;
-import com.ibm.ca.dom.Div;
-import com.ibm.ca.dom.H;
-import com.ibm.ca.dom.P;
+import com.ibm.ca.jadom.Aside;
+import com.ibm.ca.jadom.Div;
+import com.ibm.ca.jadom.H;
+import com.ibm.ca.jadom.P;
 
 /**
  * Servlet implementation class BasicSections
@@ -43,10 +43,10 @@ public class BasicSections extends ApplicationServlet {
 		//navi.addAttribute("style", "position:fixed");
 		bodyAdd(navi);
 		bodyAdd(new H(2, "Addd", "lightblue	", "hEADERID", null));
-		bodyAdd(new H(4, "PreAplha Release", "domClass", "hEADERID", null));
+		bodyAdd(new H(4, "PreAplha Release", ApplicationManager.STRING_DOMCLASS, "hEADERID", null));
 		Div div = new Div(FileReader.readFile(request.getServletContext().getRealPath("/templates/jaDom/CreatingDocuments.jaDom")));
 		div.addAttribute("style", "width:75%;height:auto"); 
-		div.addAttribute("domClass","right");
+		div.addAttribute(ApplicationManager.STRING_DOMCLASS,"right");
 		bodyAdd(div);
 		
 		execute(response);

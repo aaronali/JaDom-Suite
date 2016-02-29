@@ -60,28 +60,28 @@
 	/**
 	 * Gets the areas coordinates
 	 * @return Coord
-	 * @see com.ibm.ca.dom.Coord
+	 * @see com.ibm.ca.jadom.Coord
 	 */
 	public Coord getCoords();
 
 	/**
 	 * Sets the areas coordinates
 	 * @param coords Coord
-	 * @see com.ibm.ca.dom.Coord
+	 * @see com.ibm.ca.jadom.Coord
 	 */
 	public void setCoords(Coord coords);
 
 	/**
 	 * Gets the current shape of the area
 	 * @return Shape
-	 * @see com.ibm.ca.dom.Shape
+	 * @see com.ibm.ca.jadom.Shape
 	 */
 	public Shape getShape();
 
 	/**
 	 * Sets the current shape of the area
 	 * @param shape Shape
-	 * @see com.ibm.ca.dom.Shape
+	 * @see com.ibm.ca.jadom.Shape
 	 */
 	public void setShape(Shape shape);
 

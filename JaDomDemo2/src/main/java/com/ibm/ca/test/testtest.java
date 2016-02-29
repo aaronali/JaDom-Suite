@@ -13,7 +13,15 @@ import com.ibm.ca.JavaScript.EventListener;
 import com.ibm.ca.JavaScript.JavaScript;
 import com.ibm.ca.JavaScript.XMLHttpRequest;
 import com.ibm.ca.Network.IpAddress;
-import com.ibm.ca.dom.*;
+import com.ibm.ca.jadom.ApplicationManager;
+import com.ibm.ca.jadom.Body;
+import com.ibm.ca.jadom.Div;
+import com.ibm.ca.jadom.Document;
+import com.ibm.ca.jadom.H;
+import com.ibm.ca.jadom.Header;
+import com.ibm.ca.jadom.Img;
+import com.ibm.ca.jadom.P;
+import com.ibm.ca.jadom.*;
 import com.ibm.ca.logger.Logger; 
 public class testtest {
 
@@ -65,7 +73,7 @@ System.out.println(p.toString());
 	 System.out.println(blockQuote.toString());
 	   blockQuote = new BlockQuote("HTML bods","this cite");
 	 System.out.println(blockQuote.toString());
-	   BlockQuote  as= new BlockQuote("html code", "some site", "myid", "domclass", "color:blue", "onlick=\"alert()\"");
+	   BlockQuote  as= new BlockQuote("html code", "some site", "myid", ApplicationManager.STRING_DOMCLASS, "color:blue", "onlick=\"alert()\"");
 	 
 	 System.out.println("----------------------------") ;
 	 System.out.println("----------------------------") ;

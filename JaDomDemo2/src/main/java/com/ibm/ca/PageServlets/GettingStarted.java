@@ -12,7 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.ibm.ca.FileReader.FileReader;
 import com.ibm.ca.JavaScript.DomFunction;
 import com.ibm.ca.customNavigation.SidePageNav;
-import com.ibm.ca.dom.*;
+import com.ibm.ca.jadom.A;
+import com.ibm.ca.jadom.Aside;
+import com.ibm.ca.jadom.Div;
+import com.ibm.ca.jadom.H;
+import com.ibm.ca.jadom.P;
+import com.ibm.ca.jadom.*;
 import com.ibm.ca.logger.Logger;
 
 /**
@@ -40,12 +45,12 @@ public class GettingStarted extends ApplicationServlet {
 	
 		Div div = new Div();  
 		bodyAdd(new H(2, "Getting Started with JaDom", "lightblue	", "hEADERID", null));
-		bodyAdd(new H(4, "PreAplha Release", "domClass", "hEADERID", null));
+		bodyAdd(new H(4, "PreAplha Release", ApplicationManager.STRING_DOMCLASS, "hEADERID", null));
 		bodyAdd(new P("Any thing is possible", null, null, null, null));
 		
 		SidePageNav nav = new SidePageNav();
 		for(String s :strs){
-			DomFunction f1 =  new DomFunction(null,div.getElementById()+".innerHTML = eventListenerNamePlaceHolder.responseText",null); 
+			DomFunction f1 =  new DomFunction(null,div.getElementById(div)+".innerHTML = eventListenerNamePlaceHolder.responseText",null); 
 			String responseText = FileReader.readFile(request.getServletContext().getRealPath("/GettingStarted/JaDom/".concat(s)));
 			System.out.println(responseText);
 			java.lang.Object[] param=  {responseText};
@@ -64,8 +69,8 @@ public class GettingStarted extends ApplicationServlet {
 		
 	 
 		
-		div.addAttribute("style", "width:75%;height:auto"); 
-		div.addAttribute("domClass","right");
+		div.addAttribute("style", "width:100%;height:auto"); 
+		div.addAttribute(ApplicationManager.STRING_DOMCLASS,"right");
 		bodyAdd(div);
 	 
 	 
